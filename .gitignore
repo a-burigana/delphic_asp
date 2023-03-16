@@ -1,0 +1,10 @@
+# Project
+.vscode/
+old_versions/
+run_config/debug.lp
+
+# Out files
+out/
+
+# Other
+*/.DS_Store
