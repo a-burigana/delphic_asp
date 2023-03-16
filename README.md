@@ -2,10 +2,23 @@
 
 An ASP implementation of the *DELPHIC* framework for Epistemic Planning.
 
+
+## Installation
+
+We made the installation of *DELPHIC* easy by using the *Conda* package management system. If you don't have *Conda* installed in your machine, please follow this [guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html).
+
+To install *DELPHIC*, move to the *DELPHIC* directory in your terminal and simply run the following command:
+
+    conda env create -f delphic.yml
+
+All dependencies needed for the installation are specified in the YAML file `delphic.yml`. Before running *DELPHIC*, you only need to activate its Conda environment with the following command:
+
+    conda activate delphic
+
+
 ## Usage
 
 We have implemented a Python script to use *DELPHIC* more practically from the command line. After showing its basic usage, we show the equivalent way of running the ASP programs by directly using *clingo* from the command line.
-
 
 ### Using *DELPHIC* via Python
 
