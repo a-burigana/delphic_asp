@@ -26,8 +26,6 @@ def parse_arguments(argv):
     print_states_ = False
     print_tests_  = False
 
-    time_limit    = 600     # seconds
-
     i = 0
     n = len(argv)
 
@@ -36,7 +34,26 @@ def parse_arguments(argv):
         i  += 1
 
         if opt in ('-h', '--help'):
-            print('Usage: python delphic.py -i|--instance <path' + os.sep + 'to' + os.sep + 'instance>')
+            usage='''Usage:
+  python delphic.py -i <path/to/instance> [options]
+
+Options:
+  1. -s|--semantics <s>: default value: 'delphic'. Choose the semantics used
+                         for solving ('delphic' or 'kripke').
+  2. -d|--debug        : use debug mode to test a specific sequence of
+                         actions. The desired actions can be specified in
+                         the 'debug.lp' file. When debug mode is on, DELPHIC
+                         will include the ASP file 'run_config/debug.lp'
+                         instead of 'run_config/search.lp'.
+  3. -p|--print        : print a graphical representation of the output (using
+                         the graphviz engine).
+  4. --test            : print test results (total solving time and number of
+                         ground atoms).
+  5. -h|--help         : print usage information.
+
+More information can be found at: https://github.com/a-burigana/delphic_asp
+'''
+            print(usage)
             sys.exit()
         elif opt in ('-i', '--instance'):
             instance_file = argv[i]
@@ -55,8 +72,6 @@ def parse_arguments(argv):
             print_states_ = True
         elif opt == '--test':
             print_tests_ = True
-            clingo_args.append('--time-limit=' + str(time_limit))
-            # clingo_args.append('--verbose=0')
         else:
             clingo_args.append(opt)
     
