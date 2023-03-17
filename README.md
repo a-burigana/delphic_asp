@@ -13,7 +13,7 @@ To install *DELPHIC*, move to the *DELPHIC* directory in your terminal and simpl
 conda env create -f delphic.yml
 ```
 
-All dependencies needed for the installation are specified in the YAML file `delphic.yml`. Before running *DELPHIC*, you only need to activate its Conda environment with the following command:
+This will take care of everything. All dependencies needed for the installation are specified in the YAML file `delphic.yml`. Before running *DELPHIC*, you only need to activate its Conda environment with the following command:
 
 ```bash
 conda activate delphic
