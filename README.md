@@ -9,11 +9,15 @@ We made the installation of *DELPHIC* easy by using the *Conda* package manageme
 
 To install *DELPHIC*, move to the *DELPHIC* directory in your terminal and simply run the following command:
 
-    conda env create -f delphic.yml
+```bash
+conda env create -f delphic.yml
+```
 
 All dependencies needed for the installation are specified in the YAML file `delphic.yml`. Before running *DELPHIC*, you only need to activate its Conda environment with the following command:
 
-    conda activate delphic
+```bash
+conda activate delphic
+```
 
 
 ## Usage
@@ -24,7 +28,9 @@ We have implemented a Python script to use *DELPHIC* more practically from the c
 
 To use *DELPHIC* via Python, use the following command:
 
-    python delphic.py -i <path/to/instance> [options]
+```bash
+python delphic.py -i <path/to/instance> [options]
+```
 
 When specifying the path of the desired instance, *DELPHIC* assumes that in the same directory is contained a file named `domain.lp`. *DELPHIC* automatically passes the domain file to *clingo*.
 
@@ -40,7 +46,9 @@ Moreover, by default, *DELPHIC* passes to *clingo* the file 'run_config/search.l
 
 All options that do not conform to this syntax are interpreted as *clingo* options. For instance, the command
 
-    python delphic.py -i exp/CB/instance__pl_5.lp -s kripke --time-limit=60
+```bash
+python delphic.py -i exp/CB/instance__pl_5.lp -s kripke --time-limit=60
+```
 
 will pass `-i exp/CB/instance__pl_5.lp` and `-s kripke` to *DELPHIC* and `--time-limit=60` to *clingo*.
 
@@ -54,11 +62,15 @@ To use *DELPHIC* via *clingo*, one needs to pass the following files in the comm
 
 For instance, the following command
 
-    clingo exp/CB/domain.lp exp/CB/instance__pl_5.lp run_config/debug.lp semantics/delphic.lp
+```bash
+clingo exp/CB/domain.lp exp/CB/instance__pl_5.lp run_config/debug.lp semantics/delphic.lp
+```
 
 is equivalent to
 
-    python delphic.py -i exp/CB/instance__pl_5.lp --debug
+```bash
+python delphic.py -i exp/CB/instance__pl_5.lp --debug
+```
 
 Notice that printing and testing is *not* possible by directly using *clingo* in the command line, since these features are implemented by using the clingo API for Python.
 
